@@ -49,6 +49,10 @@ static_resources:
                       domains: ["*"]
                       routes:
                         - match:
+                            prefix: "/api/audience"
+                          route:
+                            cluster: xsuportal_audience
+                        - match:
                             prefix: "/xsuportal.proto.services.bench.BenchmarkQueue/"
                           route:
                             cluster: xsuportal_api
@@ -116,7 +120,7 @@ static_resources:
               - endpoint:
                   address:
                     socket_address:
-                      address: "10.192.0.102"
+                      address: "10.192.0.103"
                       port_value: 9292
     - name: xsuportal_api
       type: STATIC
@@ -132,6 +136,20 @@ static_resources:
                     socket_address:
                       address: "10.192.0.101"
                       port_value: 50051
+              - endpoint:
+                  address:
+                    socket_address:
+                      address: "10.192.0.103"
+                      port_value: 50051
+    - name: xsuportal_audience
+      type: STATIC
+      connect_timeout: 0.25s
+      lb_policy: ROUND_ROBIN
+      http2_protocol_options: {}
+      load_assignment:
+        cluster_name: xsuportal_audience
+        endpoints:
+          - lb_endpoints:
               - endpoint:
                   address:
                     socket_address:
