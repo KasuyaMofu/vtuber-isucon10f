@@ -323,7 +323,7 @@ func (*AdminService) RespondClarification(e echo.Context) error {
 	var clarificationBefore xsuportal.Clarification
 	err = tx.Get(
 		&clarificationBefore,
-		"SELECT * FROM `clarifications` WHERE `id` = ? LIMIT 1 FOR UPDATE",
+		"SELECT * FROM `clarifications` WHERE `id` = ? ORDER BY RAND() LIMIT 1 FOR UPDATE",
 		id,
 	)
 	if err == sql.ErrNoRows {
