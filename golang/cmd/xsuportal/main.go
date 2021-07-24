@@ -8,6 +8,7 @@ import (
 	"database/sql"
 	"encoding/base64"
 	"encoding/hex"
+	"encoding/json"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -15,6 +16,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/go-redis/redis/v8"
 	"github.com/go-sql-driver/mysql"
 	"github.com/golang/protobuf/proto"
 	"github.com/gorilla/sessions"
@@ -46,6 +48,12 @@ const (
 
 var db *sqlx.DB
 var notifier xsuportal.Notifier
+var ctx = context.Background()
+var rds = redis.NewClient(&redis.Options{
+	Addr:     util.GetEnv("REDIS_URL", "localhost:6379"),
+	Password: "", // no password set
+	DB:       0,  // use default DB
+})
 
 func main() {
 	srv := echo.New()
@@ -1219,6 +1227,7 @@ func (*AudienceService) Dashboard(e echo.Context) error {
 	if err != nil {
 		return fmt.Errorf("make leaderboard: %w", err)
 	}
+	e.Response().Header().Set("Cache-Control", "public,max-age=1")
 	return writeProto(e, http.StatusOK, &audiencepb.DashboardResponse{
 		Leaderboard: leaderboard,
 	})
@@ -1461,6 +1470,14 @@ func makeContestPB(e echo.Context) (*resourcespb.Contest, error) {
 }
 
 func makeLeaderboardPB(e echo.Context, teamID int64) (*resourcespb.Leaderboard, error) {
+	leaderboardRedis := rds.Get(ctx, "leaderboard")
+	var ldb resourcespb.Leaderboard
+	err := json.Unmarshal([]byte(leaderboardRedis.String()), &ldb)
+	if err == nil {
+		return &ldb, nil
+	}
+	// if redis, jsonからobjectにして返す
+
 	contestStatus, err := getCurrentContestStatus(e, db)
 	if err != nil {
 		return nil, fmt.Errorf("get current contest status: %w", err)
@@ -1603,6 +1620,11 @@ func makeLeaderboardPB(e echo.Context, teamID int64) (*resourcespb.Leaderboard, 
 			pb.GeneralTeams = append(pb.GeneralTeams, item)
 		}
 		pb.Teams = append(pb.Teams, item)
+	}
+	m, err := json.Marshal(pb)
+	err = rds.Set(ctx, "leaderboard", string(m), time.Second/2).Err()
+	if err != nil {
+		panic(err)
 	}
 	return pb, nil
 }
