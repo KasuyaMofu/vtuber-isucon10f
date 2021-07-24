@@ -56,7 +56,7 @@ func main() {
 	srv.Binder = ProtoBinder{}
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		if !c.Response().Committed {
-			c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
+			// c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
 			_ = halt(c, http.StatusInternalServerError, "", err)
 		}
 	}
@@ -64,7 +64,10 @@ func main() {
 	db, _ = xsuportal.GetDB()
 	db.SetMaxOpenConns(10)
 
-	srv.Use(middleware.Logger())
+	// ref. http://ltsv.org/
+	srv.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
+		Format: "time:${time_rfc3339_nano}\tmethod:${method}\turi:${uri}\tstatus:${status}\tlatency:${latency}\n",
+	}))
 	srv.Use(middleware.Recover())
 	srv.Use(session.Middleware(sessions.NewCookieStore([]byte("tagomoris"))))
 
