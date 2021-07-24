@@ -57,7 +57,7 @@ func main() {
 	srv.Binder = ProtoBinder{}
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		if !c.Response().Committed {
-			// c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
+			c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
 			_ = halt(c, http.StatusInternalServerError, "", err)
 		}
 	}
@@ -1146,6 +1146,7 @@ func (*AudienceService) Dashboard(e echo.Context) error {
 	if err != nil {
 		return fmt.Errorf("make leaderboard: %w", err)
 	}
+	e.Response().Header().Set("Cache-Control", "public,max-age=1")
 	return writeProto(e, http.StatusOK, &audiencepb.DashboardResponse{
 		Leaderboard: leaderboard,
 	})
