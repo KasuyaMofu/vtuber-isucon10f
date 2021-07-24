@@ -6,7 +6,8 @@ CREATE TABLE `contestants` (
   `name` VARCHAR(255),
   `student` TINYINT(1) DEFAULT FALSE,
   `staff` TINYINT(1) DEFAULT FALSE,
-  `created_at` DATETIME(6) NOT NULL
+  `created_at` DATETIME(6) NOT NULL,
+  INDEX contestants_team_cre(`team_id`, `created_at`)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8mb4;
 
 DROP TABLE IF EXISTS `teams`;
@@ -51,7 +52,8 @@ CREATE TABLE `clarifications` (
   `answer` VARCHAR(255),
   `answered_at` DATETIME(6),
   `created_at` DATETIME(6) NOT NULL,
-  `updated_at` DATETIME(6) NOT NULL
+  `updated_at` DATETIME(6) NOT NULL,
+  INDEX clar_team (`team_id`)
 ) ENGINE=InnoDB DEFAULT CHARACTER SET=utf8mb4;
 
 DROP TABLE IF EXISTS `notifications`;
