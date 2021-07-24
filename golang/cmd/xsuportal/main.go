@@ -389,7 +389,7 @@ func (*CommonService) GetCurrentSession(e echo.Context) error {
 	if currentContestant != nil {
 		res.Contestant = makeContestantPB(currentContestant)
 	}
-	currentTeam, err := getCurrentTeam(e, db, false)
+	currentTeam, err := getCurrentTeam(e, db, false, currentContestant)
 	if err != nil {
 		return fmt.Errorf("get current team: %w", err)
 	}
@@ -433,7 +433,7 @@ func (*ContestantService) EnqueueBenchmarkJob(e echo.Context) error {
 	if ok, err := contestStatusRestricted(e, tx, resourcespb.Contest_STARTED, "競技時間外はベンチマークを実行できません"); !ok {
 		return wrapError("check contest status", err)
 	}
-	team, _ := getCurrentTeam(e, tx, false)
+	team, _ := getCurrentTeam(e, tx, false, contestant)
 	var jobCount int
 	err = tx.Get(
 		&jobCount,
@@ -481,7 +481,7 @@ func (*ContestantService) ListBenchmarkJobs(e echo.Context) error {
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
 	}
-	jobs, err := makeBenchmarkJobsPB(e, db, 0)
+	jobs, err := makeBenchmarkJobsPB(e, db, 0, contestant)
 	if err != nil {
 		return fmt.Errorf("make benchmark jobs: %w", err)
 	}
@@ -503,7 +503,7 @@ func (*ContestantService) GetBenchmarkJob(e echo.Context) error {
 	if err != nil {
 		return fmt.Errorf("parse id: %w", err)
 	}
-	team, _ := getCurrentTeam(e, db, false)
+	team, _ := getCurrentTeam(e, db, false, contestant)
 	var job xsuportal.BenchmarkJob
 	err = db.Get(
 		&job,
@@ -531,7 +531,7 @@ func (*ContestantService) ListClarifications(e echo.Context) error {
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
 	}
-	team, _ := getCurrentTeam(e, db, false)
+	team, _ := getCurrentTeam(e, db, false, contestant)
 	var clarifications []xsuportal.Clarification
 	err = db.Select(
 		&clarifications,
@@ -579,7 +579,7 @@ func (*ContestantService) RequestClarification(e echo.Context) error {
 		return fmt.Errorf("begin tx: %w", err)
 	}
 	defer tx.Rollback()
-	team, _ := getCurrentTeam(e, tx, false)
+	team, _ := getCurrentTeam(e, tx, false, contestant)
 	_, err = tx.Exec(
 		"INSERT INTO `clarifications` (`team_id`, `question`, `created_at`, `updated_at`) VALUES (?, ?, NOW(6), NOW(6))",
 		team.ID,
@@ -614,7 +614,7 @@ func (*ContestantService) Dashboard(e echo.Context) error {
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
 	}
-	team, _ := getCurrentTeam(e, db, false)
+	team, _ := getCurrentTeam(e, db, false, contestant)
 	leaderboard, err := makeLeaderboardPB(e, team.ID)
 	if err != nil {
 		return fmt.Errorf("make leaderboard: %w", err)
@@ -678,7 +678,7 @@ func (*ContestantService) ListNotifications(e echo.Context) error {
 	if err := tx.Commit(); err != nil {
 		return fmt.Errorf("commit tx: %w", err)
 	}
-	team, _ := getCurrentTeam(e, db, false)
+	team, _ := getCurrentTeam(e, db, false, contestant)
 
 	var lastAnsweredClarificationID int64
 	err = db.Get(
@@ -855,7 +855,11 @@ type RegistrationService struct{}
 
 func (*RegistrationService) GetRegistrationSession(e echo.Context) error {
 	var team *xsuportal.Team
-	currentTeam, err := getCurrentTeam(e, db, false)
+	contestant, err := getCurrentContestant(e, db, false)
+	if err != nil {
+		return fmt.Errorf("current contestant: %w", err)
+	}
+	currentTeam, err := getCurrentTeam(e, db, false, contestant)
 	if err != nil {
 		return fmt.Errorf("get current team: %w", err)
 	}
@@ -899,10 +903,6 @@ func (*RegistrationService) GetRegistrationSession(e echo.Context) error {
 
 	res := &registrationpb.GetRegistrationSessionResponse{
 		Status: 0,
-	}
-	contestant, err := getCurrentContestant(e, db, false)
-	if err != nil {
-		return fmt.Errorf("get current contestant: %w", err)
 	}
 	switch {
 	case contestant != nil && contestant.TeamID.Valid:
@@ -1109,7 +1109,7 @@ func (*RegistrationService) UpdateRegistration(e echo.Context) error {
 	if ok, err := loginRequired(e, tx, &loginRequiredOption{Team: true, Lock: true}, contestant); !ok {
 		return wrapError("check session", err)
 	}
-	team, _ := getCurrentTeam(e, tx, false)
+	team, _ := getCurrentTeam(e, tx, false, contestant)
 	// contestant, _ := getCurrentContestant(e, tx, false)
 	if team.LeaderID.Valid && team.LeaderID.String == contestant.ID {
 		_, err := tx.Exec(
@@ -1154,7 +1154,7 @@ func (*RegistrationService) DeleteRegistration(e echo.Context) error {
 	if ok, err := contestStatusRestricted(e, tx, resourcespb.Contest_REGISTRATION, "チーム登録期間外は辞退できません"); !ok {
 		return wrapError("check contest status", err)
 	}
-	team, _ := getCurrentTeam(e, tx, false)
+	team, _ := getCurrentTeam(e, tx, false, contestant)
 	// contestant, _ := getCurrentContestant(e, tx, false)
 	if team.LeaderID.Valid && team.LeaderID.String == contestant.ID {
 		_, err := tx.Exec(
@@ -1274,14 +1274,10 @@ func getCurrentContestant(e echo.Context, db sqlx.Queryer, lock bool) (*xsuporta
 	return xc.Contestant, nil
 }
 
-func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool) (*xsuportal.Team, error) {
+func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool, contestant *xsuportal.Contestant) (*xsuportal.Team, error) {
 	xc := getXsuportalContext(e)
 	if xc.Team != nil {
 		return xc.Team, nil
-	}
-	contestant, err := getCurrentContestant(e, db, false)
-	if err != nil {
-		return nil, fmt.Errorf("current contestant: %w", err)
 	}
 	if contestant == nil {
 		return nil, nil
@@ -1291,7 +1287,7 @@ func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool) (*xsuportal.Team
 	if lock {
 		query += " FOR UPDATE"
 	}
-	err = sqlx.Get(db, &team, query, contestant.TeamID.Int64)
+	err := sqlx.Get(db, &team, query, contestant.TeamID.Int64)
 	if err == sql.ErrNoRows {
 		return nil, nil
 	}
@@ -1340,7 +1336,7 @@ func loginRequired(e echo.Context, db sqlx.Queryer, option *loginRequiredOption,
 		return false, halt(e, http.StatusUnauthorized, "ログインが必要です", nil)
 	}
 	if option.Team {
-		t, err := getCurrentTeam(e, db, option.Lock)
+		t, err := getCurrentTeam(e, db, option.Lock, contestant)
 		if err != nil {
 			return false, fmt.Errorf("current team: %w", err)
 		}
@@ -1651,8 +1647,8 @@ func makeBenchmarkResultPB(job *xsuportal.BenchmarkJob) *resourcespb.BenchmarkRe
 	return pb
 }
 
-func makeBenchmarkJobsPB(e echo.Context, db sqlx.Queryer, limit int) ([]*resourcespb.BenchmarkJob, error) {
-	team, _ := getCurrentTeam(e, db, false)
+func makeBenchmarkJobsPB(e echo.Context, db sqlx.Queryer, limit int, contestant *xsuportal.Contestant) ([]*resourcespb.BenchmarkJob, error) {
+	team, _ := getCurrentTeam(e, db, false, contestant)
 	query := "SELECT * FROM `benchmark_jobs` WHERE `team_id` = ? ORDER BY `created_at` DESC"
 	if limit > 0 {
 		query += fmt.Sprintf(" LIMIT %d", limit)
