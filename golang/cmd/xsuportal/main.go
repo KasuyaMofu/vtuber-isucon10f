@@ -57,7 +57,7 @@ func main() {
 	srv.Binder = ProtoBinder{}
 	srv.HTTPErrorHandler = func(err error, c echo.Context) {
 		if !c.Response().Committed {
-			// c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
+			c.Logger().Error(c.Request().Method, " ", c.Request().URL.Path, " ", err)
 			_ = halt(c, http.StatusInternalServerError, "", err)
 		}
 	}
