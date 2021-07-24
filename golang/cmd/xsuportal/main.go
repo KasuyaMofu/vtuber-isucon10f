@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"strings"
 	"time"
@@ -64,9 +65,18 @@ func main() {
 	db, _ = xsuportal.GetDB()
 	db.SetMaxOpenConns(10)
 
+	// access.logファイルを開く
+	file, err := os.OpenFile("./access.log", os.O_RDWR|os.O_CREATE, 0755)
+	if err != nil {
+		return
+	}
+	defer file.Close()
+
+	// ltsvフォーマットで access.log に書く
 	// ref. http://ltsv.org/
 	srv.Use(middleware.LoggerWithConfig(middleware.LoggerConfig{
-		Format: "time:${time_rfc3339_nano}\tmethod:${method}\turi:${uri}\tstatus:${status}\tlatency:${latency}\n",
+		Format: "time:${time_rfc3339_nano}\tmethod:${method}\turi:${uri}\tstatus:${status}\tlatency:${latency}\terror:${error}\n",
+		Output: file,
 	}))
 	srv.Use(middleware.Recover())
 	srv.Use(session.Middleware(sessions.NewCookieStore([]byte("tagomoris"))))
