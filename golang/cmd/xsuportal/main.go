@@ -214,7 +214,7 @@ func (*AdminService) ListClarifications(e echo.Context) error {
 	option := &loginRequiredOption{}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{}, contestant); !ok {
 		return wrapError("check session", err)
@@ -252,7 +252,7 @@ func (*AdminService) GetClarification(e echo.Context) error {
 	option := &loginRequiredOption{}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{}, contestant); !ok {
 		return wrapError("check session", err)
@@ -296,7 +296,7 @@ func (*AdminService) RespondClarification(e echo.Context) error {
 	option := &loginRequiredOption{}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{}, contestant); !ok {
 		return wrapError("check session", err)
@@ -425,7 +425,7 @@ func (*ContestantService) EnqueueBenchmarkJob(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, tx, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -476,7 +476,7 @@ func (*ContestantService) ListBenchmarkJobs(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -494,7 +494,7 @@ func (*ContestantService) GetBenchmarkJob(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -526,7 +526,7 @@ func (*ContestantService) ListClarifications(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -565,7 +565,7 @@ func (*ContestantService) RequestClarification(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -609,7 +609,7 @@ func (*ContestantService) Dashboard(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -628,7 +628,7 @@ func (*ContestantService) ListNotifications(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -703,7 +703,7 @@ func (*ContestantService) SubscribeNotification(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -736,7 +736,7 @@ func (*ContestantService) UnsubscribeNotification(e echo.Context) error {
 	option := &loginRequiredOption{Team: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{Team: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -937,7 +937,7 @@ func (*RegistrationService) CreateTeam(e echo.Context) error {
 	option := &loginRequiredOption{}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, db, &loginRequiredOption{}, contestant); !ok {
 		return wrapError("check session", err)
@@ -1040,7 +1040,7 @@ func (*RegistrationService) JoinTeam(e echo.Context) error {
 	option := &loginRequiredOption{Lock: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, tx, &loginRequiredOption{Lock: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -1104,7 +1104,7 @@ func (*RegistrationService) UpdateRegistration(e echo.Context) error {
 	option := &loginRequiredOption{Team: true, Lock: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, tx, &loginRequiredOption{Team: true, Lock: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -1146,7 +1146,7 @@ func (*RegistrationService) DeleteRegistration(e echo.Context) error {
 	option := &loginRequiredOption{Team: true, Lock: true}
 	contestant, err := getCurrentContestant(e, db, option.Lock)
 	if err != nil {
-		fmt.Errorf("current contestant: %w", err)
+		return fmt.Errorf("current contestant: %w", err)
 	}
 	if ok, err := loginRequired(e, tx, &loginRequiredOption{Team: true, Lock: true}, contestant); !ok {
 		return wrapError("check session", err)
@@ -1281,7 +1281,7 @@ func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool) (*xsuportal.Team
 	}
 	contestant, err := getCurrentContestant(e, db, false)
 	if err != nil {
-		return nil, fmt.Errorf("current contestant: %w", err)
+		return nil, return fmt.Errorf("current contestant: %w", err)
 	}
 	if contestant == nil {
 		return nil, nil
