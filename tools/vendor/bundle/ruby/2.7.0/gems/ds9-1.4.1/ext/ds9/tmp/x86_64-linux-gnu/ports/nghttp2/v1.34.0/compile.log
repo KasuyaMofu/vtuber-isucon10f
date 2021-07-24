@@ -1,0 +1,91 @@
+make  all-recursive
+make[1]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0'
+Making all in lib
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib'
+Making all in includes
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib/includes'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib/includes'
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib'
+  CC       nghttp2_pq.lo
+  CC       nghttp2_map.lo
+  CC       nghttp2_queue.lo
+  CC       nghttp2_frame.lo
+  CC       nghttp2_buf.lo
+  CC       nghttp2_stream.lo
+  CC       nghttp2_outbound_item.lo
+  CC       nghttp2_session.lo
+  CC       nghttp2_submit.lo
+  CC       nghttp2_helper.lo
+  CC       nghttp2_npn.lo
+  CC       nghttp2_hd.lo
+  CC       nghttp2_hd_huffman.lo
+  CC       nghttp2_hd_huffman_data.lo
+  CC       nghttp2_version.lo
+  CC       nghttp2_priority_spec.lo
+  CC       nghttp2_option.lo
+  CC       nghttp2_callbacks.lo
+  CC       nghttp2_mem.lo
+  CC       nghttp2_http.lo
+  CC       nghttp2_rcbuf.lo
+  CC       nghttp2_debug.lo
+  CCLD     libnghttp2.la
+x86_64-linux-gnu-ar: `u' modifier ignored since `D' is the default (see `U')
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib'
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib'
+Making all in third-party
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/third-party'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/third-party'
+Making all in src
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src'
+Making all in includes
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src/includes'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src/includes'
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src'
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/src'
+Making all in examples
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/examples'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/examples'
+Making all in python
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/python'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/python'
+Making all in tests
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests'
+Making all in testdata
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests/testdata'
+make[3]: Nothing to be done for 'all'.
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests/testdata'
+make[3]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests'
+make[3]: Nothing to be done for 'all-am'.
+make[3]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests'
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/tests'
+Making all in integration-tests
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/integration-tests'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/integration-tests'
+Making all in doc
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/doc'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/doc'
+Making all in contrib
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/contrib'
+rm -f nghttpx-init nghttpx-init.tmp
+sed -e 's|@bindir[@]|/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/bin|g' nghttpx-init.in > nghttpx-init.tmp
+chmod +x nghttpx-init.tmp
+mv nghttpx-init.tmp nghttpx-init
+sed -e 's|@bindir[@]|/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/bin|g' nghttpx.service.in > nghttpx.service
+sed -e 's|@bindir[@]|/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/bin|g' nghttpx-upstart.conf.in > nghttpx-upstart.conf
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/contrib'
+Making all in script
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/script'
+make[2]: Nothing to be done for 'all'.
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/script'
+make[2]: Entering directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0'
+make[2]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0'
+make[1]: Leaving directory '/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0'

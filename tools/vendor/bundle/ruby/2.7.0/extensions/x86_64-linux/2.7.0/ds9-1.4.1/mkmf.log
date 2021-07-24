@@ -1,0 +1,47 @@
+have_header: checking for nghttp2/nghttp2.h... -------------------- yes
+
+"gcc -o conftest -I/home/isucon/local/ruby/include/ruby-2.7.0/x86_64-linux -I/home/isucon/local/ruby/include/ruby-2.7.0/ruby/backward -I/home/isucon/local/ruby/include/ruby-2.7.0 -I. -I/home/isucon/local/ruby/include    -I/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/include -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/isucon/local/ruby/lib -Wl,-rpath,/home/isucon/local/ruby/lib -L/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/lib -Wl,-rpath,/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/lib -L. -L/home/isucon/local/ruby/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/isucon/local/ruby/lib -L/home/isucon/local/ruby/lib -lruby  -lm   -lc -lstdc++"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: int main(int argc, char **argv)
+4: {
+5:   return !!argv[argc];
+6: }
+/* end */
+
+"gcc -E -I/home/isucon/local/ruby/include/ruby-2.7.0/x86_64-linux -I/home/isucon/local/ruby/include/ruby-2.7.0/ruby/backward -I/home/isucon/local/ruby/include/ruby-2.7.0 -I. -I/home/isucon/local/ruby/include    -I/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/include -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC  conftest.c -o conftest.i"
+checked program was:
+/* begin */
+1: #include "ruby.h"
+2: 
+3: #include <nghttp2/nghttp2.h>
+/* end */
+
+--------------------
+
+have_library: checking for -lnghttp2... -------------------- yes
+
+"gcc -o conftest -I/home/isucon/local/ruby/include/ruby-2.7.0/x86_64-linux -I/home/isucon/local/ruby/include/ruby-2.7.0/ruby/backward -I/home/isucon/local/ruby/include/ruby-2.7.0 -I. -I/home/isucon/local/ruby/include    -I/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/include -O3 -ggdb3 -Wall -Wextra -Wdeprecated-declarations -Wduplicated-cond -Wimplicit-function-declaration -Wimplicit-int -Wmisleading-indentation -Wpointer-arith -Wwrite-strings -Wimplicit-fallthrough=0 -Wmissing-noreturn -Wno-cast-function-type -Wno-constant-logical-operand -Wno-long-long -Wno-missing-field-initializers -Wno-overlength-strings -Wno-packed-bitfield-compat -Wno-parentheses-equality -Wno-self-assign -Wno-tautological-compare -Wno-unused-parameter -Wno-unused-value -Wsuggest-attribute=format -Wsuggest-attribute=noreturn -Wunused-variable  -fPIC conftest.c  -L. -L/home/isucon/local/ruby/lib -Wl,-rpath,/home/isucon/local/ruby/lib -L/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/lib -Wl,-rpath,/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/lib -L. -L/home/isucon/local/ruby/lib  -fstack-protector-strong -rdynamic -Wl,-export-dynamic     -Wl,-rpath,/home/isucon/local/ruby/lib -L/home/isucon/local/ruby/lib -lruby -lnghttp2  -lm   -lc -lstdc++"
+checked program was:
+/* begin */
+ 1: #include "ruby.h"
+ 2: 
+ 3: /*top*/
+ 4: extern int t(void);
+ 5: int main(int argc, char **argv)
+ 6: {
+ 7:   if (argc > 1000000) {
+ 8:     int (* volatile tp)(void)=(int (*)(void))&t;
+ 9:     printf("%d", (*tp)());
+10:   }
+11: 
+12:   return !!argv[argc];
+13: }
+14: 
+15: int t(void) { ; return 0; }
+/* end */
+
+--------------------
+

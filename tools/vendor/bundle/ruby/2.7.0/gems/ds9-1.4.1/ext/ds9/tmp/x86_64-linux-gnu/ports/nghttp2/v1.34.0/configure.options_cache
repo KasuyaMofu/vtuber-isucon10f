@@ -1,0 +1,1 @@
+["--host=x86_64-linux-gnu", "--enable-static", "--disable-shared", "--with-pic", "--disable-python-bindings", "--prefix=/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0"]

@@ -1,0 +1,17 @@
+[Unit]
+Description=HTTP/2 proxy
+Documentation=man:nghttpx
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0/bin/nghttpx --conf=/etc/nghttpx/nghttpx.conf
+ExecReload=/bin/kill --signal HUP $MAINPID
+KillSignal=SIGQUIT
+PrivateTmp=yes
+ProtectHome=yes
+ProtectSystem=full
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

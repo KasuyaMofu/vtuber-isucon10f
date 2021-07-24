@@ -1,0 +1,344 @@
+checking for x86_64-linux-gnu-gcc... x86_64-linux-gnu-gcc
+checking whether the C compiler works... yes
+checking for C compiler default output file name... a.out
+checking for suffix of executables... 
+checking whether we are cross compiling... no
+checking for suffix of object files... o
+checking whether we are using the GNU C compiler... yes
+checking whether x86_64-linux-gnu-gcc accepts -g... yes
+checking for x86_64-linux-gnu-gcc option to accept ISO C89... none needed
+checking whether x86_64-linux-gnu-gcc understands -c and -o together... yes
+checking how to run the C preprocessor... x86_64-linux-gnu-gcc -E
+checking for grep that handles long lines and -e... /usr/bin/grep
+checking for egrep... /usr/bin/grep -E
+checking for ANSI C header files... yes
+checking for sys/types.h... yes
+checking for sys/stat.h... yes
+checking for stdlib.h... yes
+checking for string.h... yes
+checking for memory.h... yes
+checking for strings.h... yes
+checking for inttypes.h... yes
+checking for stdint.h... yes
+checking for unistd.h... yes
+checking minix/config.h usability... no
+checking minix/config.h presence... no
+checking for minix/config.h... no
+checking whether it is safe to define __EXTENSIONS__... yes
+checking build system type... x86_64-pc-linux-gnu
+checking host system type... x86_64-pc-linux-gnu
+checking how to print strings... printf
+checking for a sed that does not truncate output... /usr/bin/sed
+checking for fgrep... /usr/bin/grep -F
+checking for ld used by x86_64-linux-gnu-gcc... /usr/bin/ld
+checking if the linker (/usr/bin/ld) is GNU ld... yes
+checking for BSD- or MS-compatible name lister (nm)... /usr/bin/x86_64-linux-gnu-nm -B
+checking the name lister (/usr/bin/x86_64-linux-gnu-nm -B) interface... BSD nm
+checking whether ln -s works... yes
+checking the maximum length of command line arguments... 1572864
+checking how to convert x86_64-pc-linux-gnu file names to x86_64-pc-linux-gnu format... func_convert_file_noop
+checking how to convert x86_64-pc-linux-gnu file names to toolchain format... func_convert_file_noop
+checking for /usr/bin/ld option to reload object files... -r
+checking for x86_64-linux-gnu-objdump... x86_64-linux-gnu-objdump
+checking how to recognize dependent libraries... pass_all
+checking for x86_64-linux-gnu-dlltool... no
+checking for dlltool... no
+checking how to associate runtime and link libraries... printf %s\n
+checking for x86_64-linux-gnu-ar... x86_64-linux-gnu-ar
+checking for archiver @FILE support... @
+checking for x86_64-linux-gnu-strip... x86_64-linux-gnu-strip
+checking for x86_64-linux-gnu-ranlib... x86_64-linux-gnu-ranlib
+checking for gawk... gawk
+checking command to parse /usr/bin/x86_64-linux-gnu-nm -B output from x86_64-linux-gnu-gcc object... ok
+checking for sysroot... no
+checking for a working dd... /usr/bin/dd
+checking how to truncate binary pipes... /usr/bin/dd bs=4096 count=1
+checking for x86_64-linux-gnu-mt... no
+checking for mt... mt
+checking if mt is a manifest tool... no
+checking for dlfcn.h... yes
+checking for objdir... .libs
+checking if x86_64-linux-gnu-gcc supports -fno-rtti -fno-exceptions... no
+checking for x86_64-linux-gnu-gcc option to produce PIC... -fPIC -DPIC
+checking if x86_64-linux-gnu-gcc PIC flag -fPIC -DPIC works... yes
+checking if x86_64-linux-gnu-gcc static flag -static works... yes
+checking if x86_64-linux-gnu-gcc supports -c -o file.o... yes
+checking if x86_64-linux-gnu-gcc supports -c -o file.o... (cached) yes
+checking whether the x86_64-linux-gnu-gcc linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking whether stripping libraries is possible... yes
+checking if libtool supports shared libraries... yes
+checking whether to build shared libraries... no
+checking whether to build static libraries... yes
+checking target system type... x86_64-pc-linux-gnu
+checking for a BSD-compatible install... /usr/bin/install -c
+checking whether build environment is sane... yes
+checking for a thread-safe mkdir -p... /usr/bin/mkdir -p
+checking whether make sets $(MAKE)... yes
+checking whether make supports the include directive... yes (GNU style)
+checking whether make supports nested variables... yes
+checking dependency style of x86_64-linux-gnu-gcc... gcc3
+checking whether make supports nested variables... (cached) yes
+checking for x86_64-linux-gnu-gcc... (cached) x86_64-linux-gnu-gcc
+checking whether we are using the GNU C compiler... (cached) yes
+checking whether x86_64-linux-gnu-gcc accepts -g... (cached) yes
+checking for x86_64-linux-gnu-gcc option to accept ISO C89... (cached) none needed
+checking whether x86_64-linux-gnu-gcc understands -c and -o together... (cached) yes
+checking for x86_64-linux-gnu-g++... x86_64-linux-gnu-g++
+checking whether we are using the GNU C++ compiler... yes
+checking whether x86_64-linux-gnu-g++ accepts -g... yes
+checking how to run the C++ preprocessor... x86_64-linux-gnu-g++ -E
+checking for ld used by x86_64-linux-gnu-g++... /usr/bin/ld -m elf_x86_64
+checking if the linker (/usr/bin/ld -m elf_x86_64) is GNU ld... yes
+checking whether the x86_64-linux-gnu-g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking for x86_64-linux-gnu-g++ option to produce PIC... -fPIC -DPIC
+checking if x86_64-linux-gnu-g++ PIC flag -fPIC -DPIC works... yes
+checking if x86_64-linux-gnu-g++ static flag -static works... yes
+checking if x86_64-linux-gnu-g++ supports -c -o file.o... yes
+checking if x86_64-linux-gnu-g++ supports -c -o file.o... (cached) yes
+checking whether the x86_64-linux-gnu-g++ linker (/usr/bin/ld -m elf_x86_64) supports shared libraries... yes
+checking dynamic linker characteristics... (cached) GNU/Linux ld.so
+checking how to hardcode library paths into programs... immediate
+checking dependency style of x86_64-linux-gnu-g++... gcc3
+checking how to run the C preprocessor... x86_64-linux-gnu-gcc -E
+checking whether ln -s works... yes
+checking whether make sets $(MAKE)... (cached) yes
+checking for x86_64-linux-gnu-pkg-config... /usr/bin/x86_64-linux-gnu-pkg-config
+checking pkg-config is at least version 0.20... yes
+checking for a Python interpreter with version >= 2.7... python3
+checking for python3... /usr/bin/python3
+checking for python3 version... 3.8
+checking for python3 platform... linux
+checking for python3 script directory... ${prefix}/lib/python3.8/site-packages
+checking for python3 extension module directory... ${exec_prefix}/lib/python3.8/site-packages
+checking for cython.py... no
+checking for cython... no
+checking whether x86_64-linux-gnu-g++ supports C++11 features by default... yes
+checking whether std::future is available... yes
+checking whether std::map::emplace is available... yes
+checking whether std::atomic_* overloads for std::shared_ptr are available... yes
+checking whether thread_local storage class specifier is available.... yes
+checking for ZLIB... yes
+checking for library containing dlopen... -ldl
+checking for CUNIT... no
+configure: WARNING: No package 'cunit' found
+checking for CU_initialize_registry in -lcunit... no
+checking for ev_time in -lev... no
+checking for OPENSSL... yes
+checking for LIBCARES... no
+configure: No package 'libcares' found
+checking for LIBEVENT_OPENSSL... no
+configure: No package 'libevent_openssl' found
+checking for JANSSON... no
+configure: No package 'jansson' found
+checking for SYSTEMD... no
+configure: No package 'libsystemd' found
+checking for LIBXML2... yes
+checking for library containing malloc_stats_print... no
+checking for library containing je_malloc_stats_print... no
+checking whether to enable assertions... yes
+checking arpa/inet.h usability... yes
+checking arpa/inet.h presence... yes
+checking for arpa/inet.h... yes
+checking fcntl.h usability... yes
+checking fcntl.h presence... yes
+checking for fcntl.h... yes
+checking for inttypes.h... (cached) yes
+checking limits.h usability... yes
+checking limits.h presence... yes
+checking for limits.h... yes
+checking netdb.h usability... yes
+checking netdb.h presence... yes
+checking for netdb.h... yes
+checking netinet/in.h usability... yes
+checking netinet/in.h presence... yes
+checking for netinet/in.h... yes
+checking pwd.h usability... yes
+checking pwd.h presence... yes
+checking for pwd.h... yes
+checking stddef.h usability... yes
+checking stddef.h presence... yes
+checking for stddef.h... yes
+checking for stdint.h... (cached) yes
+checking for stdlib.h... (cached) yes
+checking for string.h... (cached) yes
+checking sys/socket.h usability... yes
+checking sys/socket.h presence... yes
+checking for sys/socket.h... yes
+checking sys/time.h usability... yes
+checking sys/time.h presence... yes
+checking for sys/time.h... yes
+checking syslog.h usability... yes
+checking syslog.h presence... yes
+checking for syslog.h... yes
+checking time.h usability... yes
+checking time.h presence... yes
+checking for time.h... yes
+checking for unistd.h... (cached) yes
+checking for size_t... yes
+checking for ssize_t... yes
+checking for uint8_t... yes
+checking for uint16_t... yes
+checking for uint32_t... yes
+checking for uint64_t... yes
+checking for int8_t... yes
+checking for int16_t... yes
+checking for int32_t... yes
+checking for int64_t... yes
+checking for off_t... yes
+checking for pid_t... yes
+checking for uid_t in sys/types.h... yes
+checking for ptrdiff_t... yes
+checking whether byte ordering is bigendian... no
+checking for inline... inline
+checking for special C compiler options needed for large files... no
+checking for _FILE_OFFSET_BITS value needed for large files... no
+checking for struct tm.tm_gmtoff... yes
+checking for struct sockaddr_in.sin_len... no
+checking for struct sockaddr_in6.sin6_len... no
+checking size of int *... 8
+checking size of time_t... 8
+checking for unistd.h... (cached) yes
+checking for working chown... yes
+checking for error_at_line... yes
+checking vfork.h usability... no
+checking vfork.h presence... no
+checking for vfork.h... no
+checking for fork... yes
+checking for vfork... yes
+checking for working fork... yes
+checking for working vfork... (cached) yes
+checking whether strerror_r is declared... yes
+checking for strerror_r... yes
+checking whether strerror_r returns char *... yes
+checking for working strnlen... yes
+checking for _Exit... yes
+checking for accept4... yes
+checking for dup2... yes
+checking for getcwd... yes
+checking for getpwnam... yes
+checking for localtime_r... yes
+checking for memchr... yes
+checking for memmove... yes
+checking for memset... yes
+checking for mkostemp... yes
+checking for socket... yes
+checking for sqrt... no
+checking for strchr... yes
+checking for strdup... yes
+checking for strerror... yes
+checking for strndup... yes
+checking for strstr... yes
+checking for strtol... yes
+checking for strtoul... yes
+checking for timegm... yes
+checking for timerfd_create... yes
+checking whether initgroups is declared... yes
+checking whether C compiler accepts -fvisibility=hidden... yes
+checking that generated files are newer than configure... done
+configure: creating ./config.status
+config.status: creating Makefile
+config.status: creating lib/Makefile
+config.status: creating lib/libnghttp2.pc
+config.status: creating lib/includes/Makefile
+config.status: creating lib/includes/nghttp2/nghttp2ver.h
+config.status: creating tests/Makefile
+config.status: creating tests/testdata/Makefile
+config.status: creating third-party/Makefile
+config.status: creating src/Makefile
+config.status: creating src/includes/Makefile
+config.status: creating src/libnghttp2_asio.pc
+config.status: creating examples/Makefile
+config.status: creating python/Makefile
+config.status: creating python/setup.py
+config.status: creating integration-tests/Makefile
+config.status: creating integration-tests/config.go
+config.status: creating integration-tests/setenv
+config.status: creating doc/Makefile
+config.status: creating doc/conf.py
+config.status: creating doc/index.rst
+config.status: creating doc/package_README.rst
+config.status: creating doc/tutorial-client.rst
+config.status: creating doc/tutorial-server.rst
+config.status: creating doc/tutorial-hpack.rst
+config.status: creating doc/nghttpx-howto.rst
+config.status: creating doc/h2load-howto.rst
+config.status: creating doc/libnghttp2_asio.rst
+config.status: creating doc/python-apiref.rst
+config.status: creating doc/building-android-binary.rst
+config.status: creating doc/nghttp2.h.rst
+config.status: creating doc/nghttp2ver.h.rst
+config.status: creating doc/asio_http2.h.rst
+config.status: creating doc/asio_http2_server.h.rst
+config.status: creating doc/asio_http2_client.h.rst
+config.status: creating doc/contribute.rst
+config.status: creating contrib/Makefile
+config.status: creating script/Makefile
+config.status: creating config.h
+config.status: executing libtool commands
+config.status: executing depfiles commands
+configure: summary of build options:
+
+    Package version: 1.34.0
+    Library version: 31:1:17
+    Install prefix:  /home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/ports/x86_64-linux-gnu/nghttp2/v1.34.0
+    System types:
+      Build:         x86_64-pc-linux-gnu
+      Host:          x86_64-pc-linux-gnu
+      Target:        x86_64-pc-linux-gnu
+    Compiler:
+      C compiler:     x86_64-linux-gnu-gcc
+      CFLAGS:         -g -O2
+      LDFLAGS:        
+      C++ compiler:   x86_64-linux-gnu-g++
+      CXXFLAGS:       -g -O2
+      CXXCPP:         x86_64-linux-gnu-g++ -E
+      C preprocessor: x86_64-linux-gnu-gcc -E
+      CPPFLAGS:       
+      WARNCFLAGS:     
+      WARNCXXFLAGS:   
+      CXX1XCXXFLAGS:  
+      EXTRACFLAG:     -fvisibility=hidden
+      LIBS:           
+    Library:
+      Shared:         no
+      Static:         yes
+    Python:
+      Python:         /usr/bin/python3
+      PYTHON_VERSION: 3.8
+      pyexecdir:      ${exec_prefix}/lib/python3.8/site-packages
+      Python-dev:     
+      PYTHON_CPPFLAGS:
+      PYTHON_LDFLAGS: 
+      Cython:         
+    Test:
+      CUnit:          no (CFLAGS='' LIBS='')
+      Failmalloc:     yes
+    Libs:
+      OpenSSL:        yes (CFLAGS='' LIBS='-lssl -lcrypto')
+      Libxml2:        yes (CFLAGS='' LIBS='-lxml2')
+      Libev:          no (CFLAGS='' LIBS='')
+      Libc-ares       no (CFLAGS='' LIBS='')
+      Libevent(SSL):  no (CFLAGS='' LIBS='')
+      Jansson:        no (CFLAGS='' LIBS='')
+      Jemalloc:       no (LIBS='')
+      Zlib:           yes (CFLAGS='' LIBS='-lz')
+      Systemd:        no (CFLAGS='' LIBS='')
+      Boost CPPFLAGS: 
+      Boost LDFLAGS:  
+      Boost::ASIO:    
+      Boost::System:  
+      Boost::Thread:  
+    Third-party:
+      http-parser:    no
+      MRuby:          no (CFLAGS='' LIBS='')
+      Neverbleed:     no
+    Features:
+      Applications:   no
+      HPACK tools:    no
+      Libnghttp2_asio:no
+      Examples:       no
+      Python bindings:no
+      Threading:      yes
+

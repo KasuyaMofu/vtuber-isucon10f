@@ -1,0 +1,12 @@
+#!/bin/sh -e
+
+libdir="/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib"
+if [ -d "$libdir/.libs" ]; then
+    libdir="$libdir/.libs"
+fi
+
+export CGO_CFLAGS="-I/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib/includes -I/home/isucon/webapp/tools/vendor/bundle/ruby/2.7.0/gems/ds9-1.4.1/ext/ds9/tmp/x86_64-linux-gnu/ports/nghttp2/v1.34.0/nghttp2-1.34.0/lib/includes"
+export CGO_LDFLAGS="-L$libdir"
+export LD_LIBRARY_PATH="$libdir"
+export GODEBUG=cgocheck=0
+"$@"

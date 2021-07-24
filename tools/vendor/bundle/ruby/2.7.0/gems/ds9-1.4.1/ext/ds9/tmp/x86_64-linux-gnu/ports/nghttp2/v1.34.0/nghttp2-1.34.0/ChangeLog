@@ -1,0 +1,411 @@
+commit 2b085815b787270b6942fc86a414edace12d40c5 (HEAD, tag: v1.34.0, origin/master, origin/HEAD, master)
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-04
+
+    Update manual pages
+
+commit 986fa3026479174c766417e19834adea6f70233c
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-04
+
+    Bump up version number to 1.34.0, LT revision to 31:1:17
+
+commit 7c8cb3a0ce08b3a2244e339654cca98033328acc
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-04
+
+    nghttpx: Improve CONNECT response status handling
+
+commit 334c439ce05b721963be56341348c1d58289051a
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-04
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-04
+
+    Fix bug that regular CONNECT does not work
+
+commit 6700626c304d435c06c2aa8a65ef8ca09076ad9f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-03
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-03
+
+    Rule out content-length in the successful response to CONNECT
+
+commit 15162addc4bd6c55798300c007647a43ab197683
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-10-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-10-02
+
+    Update manual pages
+
+commit 9327077741eab5271d29233bc80d6090348264fb
+Merge: fc7489e0 aeb92bbb
+Author:     Tatsuhiro Tsujikawa <404610+tatsuhiro-t@users.noreply.github.com>
+AuthorDate: 2018-09-30
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-09-30
+
+    Merge pull request #1235 from nghttp2/backend-conn-timeout
+    
+    nghttpx: Add read/write-timeout parameters to backend option
+
+commit aeb92bbbe29a552d2c68236c64a8176a0dcdbd8b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-30
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-30
+
+    nghttpx: Add read/write-timeout parameters to backend option
+
+commit fc7489e044720818c041fb05dcde35c4abd2108b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-30
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-30
+
+    nghttpx: Fix mruby parameter validation
+
+commit 87ac872fdcf828d7205355435c671f3cfb53fcdd
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-30
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-30
+
+    nghttpx: Update doc
+
+commit c278adde7a2ae9871b10a0d572edaa5be29b20dc
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-30
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-30
+
+    nghttpx: Log error when mruby file cannot be opened
+
+commit f94d72090996e0971c1b7bd3f1fbc367c1cb32e4
+Merge: 9b9baa6b d2a594a7
+Author:     Tatsuhiro Tsujikawa <404610+tatsuhiro-t@users.noreply.github.com>
+AuthorDate: 2018-09-29
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-09-29
+
+    Merge pull request #1234 from nghttp2/nghttpx-rfc8441
+    
+    nghttpx: Implement RFC 8441 Bootstrapping WebSocket with HTTP/2
+
+commit 9b9baa6bd9f4fd4a98c3747d5b17e5976c635869
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-29
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-29
+
+    Update doc
+
+commit 02566ee383fee0ccd628e6199519f0f2203a02e8
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-29
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-29
+
+    nghttpx: Update doc
+
+commit 3002f31b1fafc7d07cc3dd8d34b2ccb6f7768a0d
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-29
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-29
+
+    src: Add debug output for SETTINGS_ENABLE_CONNECT_PROTOCOL
+
+commit d2a594a75340a02c312b70199a2532956968c594
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-03-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-29
+
+    nghttpx: Implement RFC 8441 Bootstrapping WebSocket with HTTP/2
+
+commit 651e14771182e2292833d84ab513e5f018df51c2
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-28
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-28
+
+    Allow client sending :protocol optimistically
+
+commit a42faf1cc21ca64218fc468442e02d439249c25f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-23
+
+    nghttpx: Write TLS alert during handshake
+
+commit 4aac05e1936ad14d66b994b789ab0abe0354a28c
+Merge: 8753b6da b80dfaa8
+Author:     Tatsuhiro Tsujikawa <404610+tatsuhiro-t@users.noreply.github.com>
+AuthorDate: 2018-09-23
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-09-23
+
+    Merge pull request #1231 from nghttp2/ws-lib-only
+    
+    Implement RFC 8441
+
+commit b80dfaa8a0e61b375b5f0f878ee1a56b7a3fbd64
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-23
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-23
+
+    Adjustment for RFC 8441
+
+commit a19d8f5d31047944a29a6b865fd7fca07a71eba6
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-03-11
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-23
+
+    Deal with :protocol pseudo header
+
+commit 33f6e90a56da48d9af9e635bed39510f2e2705ff
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-03-10
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-23
+
+    Add NGHTTP2_TOKEN__PROTOCOL
+
+commit ed7fabcbc24b376bbf4b168aebcdb6f1a32cf688
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-03-10
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-23
+
+    Add SETTINGS_ENABLE_CONNECT_PROTOCOL
+
+commit 8753b6da1419a267e10b1a47a37825e0b748128a
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-17
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-17
+
+    Update doc
+
+commit f2de733bdf47c5dc16169fe45bbca870234efb98
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-16
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-16
+
+    Update neverbleed to fix OpenSSL 1.1.1 issues
+
+commit 88ff8c69a0621b335794271ade7003aad65bd5ef
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-16
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-16
+
+    Update mruby 1.4.1
+
+commit a63558a1ebe3d50f4b8ab339e0d3ecdc858803c3
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-16
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-16
+
+    nghttpx: Call OCSP_response_get1_basic only when OCSP status is successful
+
+commit 3575a1325e8664bf7a55c5e4c590a9a0f9d27b79
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-15
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-15
+
+    nghttpx: Fix crash with plain text HTTP
+
+commit e2de2fee69b691013e444a23254ff8cd13d01d30
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-15
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-15
+
+    Update bash_completion
+
+commit 9f415979fbd0f2a9257ec1d86ddfe849ebad8c50
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-15
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-15
+
+    Update manual pages
+
+commit 4bfc0cd196ae6ca459b847698f6756ba732c79aa
+Merge: a1ea1696 9c824b87
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-14
+Commit:     GitHub <noreply@github.com>
+CommitDate: 2018-09-14
+
+    Merge pull request #1230 from nghttp2/nghttpx-faster-logging
+    
+    nghttpx: Get rid of std::stringstream from Log
+
+commit 9c824b87fe647c4d587fe365d9bd63704ec826fe
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-08-31
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-14
+
+    nghttpx: Get rid of std::stringstream from Log
+
+commit a1ea1696becea1d3c3c2720d44acbf5dae759560
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-13
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-13
+
+    Make VALID_HD_NAME_CHARS and VALID_HD_VALUE_CHARS const qualified
+
+commit dfc0f248c60140194626c526221e45b6ee0b3d45
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-13
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-13
+
+    Make static_table const qualified
+
+commit ed7c9db2a657005fa80eb44593f99dbbf57e6dec
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-09
+
+    nghttpx: Add mruby env.tls_handshake_finished
+
+commit 5b42815afb6214ff22e9228ade7021b5c0bf26c4
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-09
+
+    nghttpx: Strip incoming Early-Data header field by default
+
+commit cfe7fa9a754c93e807fe2bc9e9046e3872969fa9
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-09
+
+    nghttpx: Add --tls13-ciphers and --tls-client-ciphers options
+
+commit cb8a9d58fdb3bff492d27977d5d5616220150ac0
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-09
+
+    src: Remove TLSv1.3 ciphers from DEFAULT_CIPHER_LIST
+    
+    TLSv1.3 ciphers are treated differently from the ciphers for TLSv1.2
+    or earlier.
+
+commit 023b94480bc365afbd3b2740323f3f02787b2901
+Merge: f79a5812 9b03c64f
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-09
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-09
+
+    Merge branch 'tls13-early-data'
+
+commit 9b03c64f68077fb54a68b4cae9fe35ca1d0a00ed
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-08
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    nghttpx: Should postpone early data by default
+
+commit b8eccec62dc7662d2c69aa129cfe5423c36ade5b
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-08
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    nghttpx: Disable OpenSSL anti-replay
+
+commit 9f212587205aebd7dbaabbe3472527140d377d20
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-05-20
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    Specify SSL_CTX_set_max_early_data and add an option to change max value
+
+commit 47f6012407fda0a49e467344bfe35b73279c9654
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-11-26
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    nghttpx: Add an option to postpone early data processing
+
+commit 770e44de4d31bfa3c3989306d087f14ce2f765ad
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-11-26
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    Implement draft-ietf-httpbis-replay-02
+    
+    nghttpx sends early-data header field when forwarding requests which
+    are received in TLSv1.3 early data, and the TLS handshake is still in
+    progress.
+
+commit 2ab319c1375bd3a8a7d07faffa28fc4e9da00041
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-11-26
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    Don't hide error code from openssl
+
+commit 3992302432acfb4f300bb2497cdd4355080a824c
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-04-29
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    Remove SSL_ERROR_WANT_WRITE handling
+
+commit b30f312a70971a3fc570a86f963be0bfe0412232
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-04-01
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    Honor SSL_read semantics
+
+commit c5cdb78a952162aec9d0f2c9341742bb0b208631
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2017-04-01
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-08
+
+    nghttpx: Add TLSv1.3 0-RTT early data support
+
+commit f79a58120e82e7e1382e60717b14d744daf803ab
+Author:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+AuthorDate: 2018-09-02
+Commit:     Tatsuhiro Tsujikawa <tatsuhiro.t@gmail.com>
+CommitDate: 2018-09-02
+
+    Bump up version number to 1.34.0
