@@ -997,7 +997,7 @@ func (*RegistrationService) CreateTeam(e echo.Context) error {
 		return halt(e, http.StatusInternalServerError, "チームを登録できませんでした", nil)
 	}
 
-	contestant, _ := getCurrentContestant(e, db, false)
+	// contestant, _ := getCurrentContestant(e, db, false)
 
 	_, err = conn.ExecContext(
 		ctx,
@@ -1074,7 +1074,7 @@ func (*RegistrationService) JoinTeam(e echo.Context) error {
 		return halt(e, http.StatusBadRequest, "チーム人数の上限に達しています", nil)
 	}
 
-	contestant, _ := getCurrentContestant(e, tx, false)
+	// contestant, _ := getCurrentContestant(e, tx, false)
 	_, err = tx.Exec(
 		"UPDATE `contestants` SET `team_id` = ?, `name` = ?, `student` = ? WHERE `id` = ? LIMIT 1",
 		req.TeamId,
