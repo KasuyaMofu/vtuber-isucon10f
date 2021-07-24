@@ -1281,7 +1281,7 @@ func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool) (*xsuportal.Team
 	}
 	contestant, err := getCurrentContestant(e, db, false)
 	if err != nil {
-		return nil, return fmt.Errorf("current contestant: %w", err)
+		return nil, fmt.Errorf("current contestant: %w", err)
 	}
 	if contestant == nil {
 		return nil, nil
