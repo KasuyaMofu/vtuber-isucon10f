@@ -66,6 +66,27 @@ static_resources:
                     typed_config:
                       "@type": type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog
                       path: /var/log/envoy/access.log
+                      log_format:
+                        json_format:
+                          time: "%START_TIME%"
+                          method: "%REQ(:METHOD)%"
+                          uri: "%REQ(X-ENVOY-ORIGINAL-PATH?:PATH)%"
+                          protocol: "%PROTOCOL%"
+                          status: "%RESPONSE_CODE%"
+                          response_flags: "%RESPONSE_FLAGS%"
+                          grpc_status: "%RESP(grpc-status)%"
+                          grpc_trailer_status: "%TRAILER(grpc-status)%"
+                          bytes_received: "%BYTES_RECEIVED%"
+                          bytes_sent: "%BYTES_SENT%"
+                          duration: "%DURATION%"
+                          request_time: "%RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)%"
+                          response_time: "%RESP(X-RUNTIME)%"
+                          host: "%DOWNSTREAM_DIRECT_REMOTE_ADDRESS_WITHOUT_PORT%"
+                          xff: "%REQ(X-FORWARDED-FOR)%"
+                          ua: "%REQ(USER-AGENT)%"
+                          request_id: "%REQ(X-REQUEST-ID)%"
+                          authority: "%REQ(:AUTHORITY)%"
+                          upstream_host: "%UPSTREAM_HOST%"
           transport_socket:
             name: envoy.transport_sockets.tls
             typed_config:
