@@ -404,6 +404,7 @@ func (*ContestantService) EnqueueBenchmarkJob(e echo.Context) error {
 	var jobCount int
 	err = tx.Get(
 		&jobCount,
+		//  TODO: add index
 		"SELECT COUNT(*) AS `cnt` FROM `benchmark_jobs` WHERE `team_id` = ? AND `finished_at` IS NULL",
 		team.ID,
 	)
@@ -425,6 +426,7 @@ func (*ContestantService) EnqueueBenchmarkJob(e echo.Context) error {
 	var job xsuportal.BenchmarkJob
 	err = tx.Get(
 		&job,
+		// TODO: created at no houga ii?
 		"SELECT * FROM `benchmark_jobs` WHERE `id` = (SELECT LAST_INSERT_ID()) LIMIT 1",
 	)
 	if err != nil {
@@ -464,6 +466,7 @@ func (*ContestantService) GetBenchmarkJob(e echo.Context) error {
 	var job xsuportal.BenchmarkJob
 	err = db.Get(
 		&job,
+		// TODD tema_id
 		"SELECT * FROM `benchmark_jobs` WHERE `team_id` = ? AND `id` = ? LIMIT 1",
 		team.ID,
 		id,
@@ -487,6 +490,7 @@ func (*ContestantService) ListClarifications(e echo.Context) error {
 	var clarifications []xsuportal.Clarification
 	err := db.Select(
 		&clarifications,
+		// team_id etc
 		"SELECT * FROM `clarifications` WHERE `team_id` = ? OR `disclosed` = TRUE ORDER BY `id` DESC",
 		team.ID,
 	)
@@ -620,6 +624,7 @@ func (*ContestantService) ListNotifications(e echo.Context) error {
 	var lastAnsweredClarificationID int64
 	err = db.Get(
 		&lastAnsweredClarificationID,
+		// TODO: no index
 		"SELECT `id` FROM `clarifications` WHERE (`team_id` = ? OR `disclosed` = TRUE) AND `answered_at` IS NOT NULL ORDER BY `id` DESC LIMIT 1",
 		team.ID,
 	)
@@ -798,6 +803,7 @@ func (*RegistrationService) GetRegistrationSession(e echo.Context) error {
 			var t xsuportal.Team
 			err = db.Get(
 				&t,
+				// TODO: tabun mushi dekiru
 				"SELECT * FROM `teams` WHERE `id` = ? AND `invite_token` = ? AND `withdrawn` = FALSE LIMIT 1",
 				teamID,
 				inviteToken,
@@ -816,6 +822,7 @@ func (*RegistrationService) GetRegistrationSession(e echo.Context) error {
 	if team != nil {
 		err := db.Select(
 			&members,
+			// TODO: team_id
 			"SELECT * FROM `contestants` WHERE `team_id` = ?",
 			team.ID,
 		)
@@ -891,6 +898,7 @@ func (*RegistrationService) CreateTeam(e echo.Context) error {
 	var withinCapacity bool
 	err = conn.QueryRowContext(
 		ctx,
+		// connt tteiru column wo tukuttara yosasou
 		"SELECT COUNT(*) < ? AS `within_capacity` FROM `teams`",
 		TeamCapacity,
 	).Scan(&withinCapacity)
@@ -1106,6 +1114,7 @@ func (*AudienceService) ListTeams(e echo.Context) error {
 		var members []xsuportal.Contestant
 		err := db.Select(
 			&members,
+			// TODO: no index
 			"SELECT * FROM `contestants` WHERE `team_id` = ? ORDER BY `created_at`",
 			team.ID,
 		)
@@ -1211,7 +1220,8 @@ func getCurrentTeam(e echo.Context, db sqlx.Queryer, lock bool) (*xsuportal.Team
 
 func getCurrentContestStatus(e echo.Context, db sqlx.Queryer) (*xsuportal.ContestStatus, error) {
 	var contestStatus xsuportal.ContestStatus
-	err := sqlx.Get(db, &contestStatus, "SELECT *, NOW(6) AS `current_time`, CASE WHEN NOW(6) < `registration_open_at` THEN 'standby' WHEN `registration_open_at` <= NOW(6) AND NOW(6) < `contest_starts_at` THEN 'registration' WHEN `contest_starts_at` <= NOW(6) AND NOW(6) < `contest_ends_at` THEN 'started' WHEN `contest_ends_at` <= NOW(6) THEN 'finished' ELSE 'unknown' END AS `status`, IF(`contest_starts_at` <= NOW(6) AND NOW(6) < `contest_freezes_at`, 1, 0) AS `frozen` FROM `contest_config`")
+	err := sqlx.Get(db, &contestStatus,
+		"SELECT *, NOW(6) AS `current_time`, CASE WHEN NOW(6) < `registration_open_at` THEN 'standby' WHEN `registration_open_at` <= NOW(6) AND NOW(6) < `contest_starts_at` THEN 'registration' WHEN `contest_starts_at` <= NOW(6) AND NOW(6) < `contest_ends_at` THEN 'started' WHEN `contest_ends_at` <= NOW(6) THEN 'finished' ELSE 'unknown' END AS `status`, IF(`contest_starts_at` <= NOW(6) AND NOW(6) < `contest_freezes_at`, 1, 0) AS `frozen` FROM `contest_config`")
 	if err != nil {
 		return nil, fmt.Errorf("query contest status: %w", err)
 	}
@@ -1338,7 +1348,9 @@ func makeTeamPB(db sqlx.Queryer, t *xsuportal.Team, detail bool, enableMembers b
 			pb.Leader = makeContestantPB(&leader)
 		}
 		var members []xsuportal.Contestant
-		if err := sqlx.Select(db, &members, "SELECT * FROM `contestants` WHERE `team_id` = ? ORDER BY `created_at`", t.ID); err != nil {
+		if err := sqlx.Select(db, &members,
+			// TODO: index
+			"SELECT * FROM `contestants` WHERE `team_id` = ? ORDER BY `created_at`", t.ID); err != nil {
 			return nil, fmt.Errorf("select members: %w", err)
 		}
 		for _, member := range members {
