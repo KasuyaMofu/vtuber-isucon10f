@@ -404,7 +404,6 @@ func (*ContestantService) EnqueueBenchmarkJob(e echo.Context) error {
 	var jobCount int
 	err = tx.Get(
 		&jobCount,
-		//  TODO: add index
 		"SELECT COUNT(*) AS `cnt` FROM `benchmark_jobs` WHERE `team_id` = ? AND `finished_at` IS NULL",
 		team.ID,
 	)
@@ -466,7 +465,6 @@ func (*ContestantService) GetBenchmarkJob(e echo.Context) error {
 	var job xsuportal.BenchmarkJob
 	err = db.Get(
 		&job,
-		// TODD tema_id
 		"SELECT * FROM `benchmark_jobs` WHERE `team_id` = ? AND `id` = ? LIMIT 1",
 		team.ID,
 		id,
@@ -898,7 +896,7 @@ func (*RegistrationService) CreateTeam(e echo.Context) error {
 	var withinCapacity bool
 	err = conn.QueryRowContext(
 		ctx,
-		// connt tteiru column wo tukuttara yosasou
+		// TODO: connt tteiru column wo tukuttara yosasou
 		"SELECT COUNT(*) < ? AS `within_capacity` FROM `teams`",
 		TeamCapacity,
 	).Scan(&withinCapacity)
